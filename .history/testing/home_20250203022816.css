@@ -541,7 +541,7 @@ body {
   width: 500px;
 }
 .text h2 {
-  color: #333;
+  color: #bc1900;
   font-size: 90px;
   font-weight: 560;
   margin-bottom: 8px;
@@ -597,12 +597,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.h2 {
-  color: #333;
-  font-size: 90px;
-  font-weight: 600;
-  margin-bottom: 50px;
 }
 
 .timeline {

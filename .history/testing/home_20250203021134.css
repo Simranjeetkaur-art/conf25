@@ -538,13 +538,13 @@ body {
   justify-content: space-around;
 }
 .text {
-  width: 500px;
+  width: 540px;
 }
 .text h2 {
   color: #333;
   font-size: 90px;
-  font-weight: 560;
-  margin-bottom: 8px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 .text h5 {
   color: #333;
@@ -579,9 +579,12 @@ body {
 
 
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
-
-
-
+h2 {
+  color: #333;
+  font-size: 90px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
 .design-section {
   display: flex;
   flex-direction: column;
@@ -597,12 +600,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.h2 {
-  color: #333;
-  font-size: 90px;
-  font-weight: 600;
-  margin-bottom: 50px;
 }
 
 .timeline {
