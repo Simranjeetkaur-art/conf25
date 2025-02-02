@@ -1,0 +1,67 @@
+# import os
+# import pandas as pd
+
+# def combine_files(input_folder, output_file):
+#     all_data = []
+    
+#     # Loop through all files in the input folder
+#     for file in os.listdir(input_folder):
+#         if file.endswith(".csv"):
+#             df = pd.read_csv(os.path.join(input_folder, file))
+#             df["Source File"] = file  # Add column to track source file
+#             all_data.append(df)
+#         elif file.endswith(".xlsx"):
+#             df = pd.read_excel(os.path.join(input_folder, file))
+#             df["Source File"] = file  # Add column to track source file
+#             all_data.append(df)
+    
+#     # Combine all data into a single DataFrame
+#     if all_data:
+#         combined_df = pd.concat(all_data, ignore_index=True)
+#         combined_df.to_excel(output_file, index=False)
+#         print(f"Data combined successfully into {output_file}")
+#     else:
+#         print("No CSV or Excel files found in the folder.")
+
+# # Example usage
+# input_folder = "D:\\OUTPUT_CU_External_Jan2025"  # Change this to your folder path
+# output_file = "OUTPUT_CU_External_Jan2025_combined_data.xlsx"
+# combine_files(input_folder, output_file)
+
+
+
+import os
+import pandas as pd
+
+def combine_files(input_folder, output_file):
+    all_data = []
+    
+    # Loop through all files in the input folder
+    for file in os.listdir(input_folder):
+        file_path = os.path.join(input_folder, file)
+
+        if file.endswith(".csv"):
+            df = pd.read_csv(file_path, encoding="utf-8", errors="ignore")
+            df["Source File"] = file  # Add column to track source file
+            all_data.append(df)
+        
+        elif file.endswith(".xlsx"):
+            try:
+                df = pd.read_excel(file_path, engine="openpyxl")
+                df["Source File"] = file  # Add column to track source file
+                all_data.append(df)
+            except Exception as e:
+                print(f"Error reading {file}: {e}")
+
+    # Combine all data into a single DataFrame
+    if all_data:
+        combined_df = pd.concat(all_data, ignore_index=True)
+        combined_df.to_excel(output_file, index=False, engine="openpyxl")
+        print(f"Data combined successfully into {output_file}")
+    else:
+        print("No CSV or Excel files found in the folder.")
+
+# Example usage
+input_folder = "D:\\OUTPUT_CU_External_Jan2025"  # Change this to your folder path
+output_file = "OUTPUT_CU_External_Jan2025_combined_data.xlsx"
+combine_files(input_folder, output_file)

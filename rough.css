@@ -1,0 +1,74 @@
+#about-conference {
+    background: linear-gradient(to right, #FFFFFF, #FFDADA, #BC1900); /* Smooth White-to-Red Gradient */
+    color: black;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Section Hover Effect */
+  #about-conference:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Title Styling */
+  #about-conference h2 {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Title Underline Effect */
+  #about-conference h2::after {
+    content: "";
+    width: 80px;
+    height: 5px;
+    background: #BC1900;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-radius: 3px;
+  }
+  
+  /* Paragraph Styling */
+  #about-conference p {
+    font-size: 1.3em;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 20px auto;
+    opacity: 0.9;
+  }
+  
+  /* Highlighted Text */
+  .highlight {
+    color: #BC1900;
+    font-weight: bold;
+  }
+  
+  /* CTA Button Styling */
+  .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background: #white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+  }
+  
+  /* Button Hover Effect */
+  .cta-button:hover {
+    background: #8F1400;
+    transform: scale(1.05);
+  }
